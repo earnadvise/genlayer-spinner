@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenLayer Animated Spinner Showcase</title>
+  <meta name="description" content="Explore and export high-performance animated loading spinners designed for the GenLayer portal ecosystem.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Area -->
+    <header>
+      <div class="brand-section">
+        <!-- SVG Symbol Mini Icon -->
+        <svg width="24" height="23" viewBox="0 0 98 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="44.26 32.35 27.72 67.12 43.29 74.9 0 91.93 44.26 0 44.26 32.35" fill="#110FFF"/>
+          <polygon points="53.5 32.35 70.04 67.12 54.47 74.9 97.76 91.93 53.5 0 53.5 32.35" fill="#110FFF"/>
+          <polygon points="48.64 43.78 58.33 62.94 48.64 67.69 39.47 62.92 48.64 43.78" fill="#110FFF"/>
+        </svg>
+        <span class="brand-logo-text">GenLayer</span>
+        <span class="brand-badge">SPINNER SUITE</span>
+      </div>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+        <!-- Dark Mode Moon Icon -->
+        <svg id="theme-icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span id="theme-text">Toggle Theme</span>
+      </button>
+    </header>
+
+    <!-- Main Grid -->
+    <main id="main-content">
+      <!-- Left Column: Spinner Grid -->
+      <section class="showcase-grid">
+        
+        <!-- Spinner Card 1 -->
+        <div class="spinner-card" id="card-kinetic">
+          <div class="card-header">
+            <h2 class="card-title">Kinetic Shards</h2>
+            <p class="card-desc">Outline tracing with pulsing core and outer track.</p>
+          </div>
+          <div class="spinner-display-area">
+            <div class="spinner-wrapper" id="wrapper-kinetic" style="width: 80px; height: 80px;">
+              <!-- INLINED assets/spinner-kinetic-shards.svg -->
+              <svg class="gen-spinner-svg" viewBox="0 0 120 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="neon-glow-card-1" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="ring-grad-card-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop class="color-stop-primary" offset="0%" stop-color="#110FFF" stop-opacity="1"/>
+                    <stop class="color-stop-primary" offset="60%" stop-color="#110FFF" stop-opacity="0.3"/>
+                    <stop class="color-stop-primary" offset="100%" stop-color="#110FFF" stop-opacity="0"/>
+                  </linearGradient>
+                  <style>
+                    .bg-shard-c1 { fill: #110FFF; fill-opacity: 0.08; stroke: #110FFF; stroke-width: 1.5; stroke-opacity: 0.2; }
+                    .trace-path-c1 { fill: none; stroke: #110FFF; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 80 160; animation: trace-flow-c1 2.5s cubic-bezier(0.4, 0.2, 0.2, 1) infinite; filter: url(#neon-glow-card-1); }
+                    .trace-path-right-c1 { animation-delay: -1.25s; }
+                    .center-diamond-c1 { fill: #110FFF; transform-origin: 60px 68.5px; animation: diamond-pulse-c1 2s ease-in-out infinite; filter: url(#neon-glow-card-1); }
+                    .outer-ring-c1 { transform-origin: 60px 60px; animation: spin-c1 1.8s linear infinite; stroke-dasharray: 240 74; }
+                    @keyframes spin-c1 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                    @keyframes trace-flow-c1 { 0% { stroke-dashoffset: 240; } 50% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -240; } }
+                    @keyframes diamond-pulse-c1 { 0%, 100% { transform: scale(0.85); fill-opacity: 0.6; filter: drop-shadow(0 0 1px #110FFF); } 50% { transform: scale(1.15); fill-opacity: 1; filter: drop-shadow(0 0 6px #110FFF); } }
+                  </style>
+                </defs>
+                <circle class="outer-ring-c1" cx="60" cy="60" r="50" fill="none" stroke="url(#ring-grad-card-1)" stroke-width="3" stroke-linecap="round" />
+                <g transform="translate(60, 60) scale(0.62) translate(-48.88, -45.965)">
+                  <path class="bg-shard-c1" d="M 44.26,32.35 L 27.72,67.12 L 43.29,74.9 L 0,91.93 L 44.26,0 Z" />
+                  <path class="trace-path-c1" d="M 44.26,32.35 L 27.72,67.12 L 43.29,74.9 L 0,91.93 L 44.26,0 Z" />
+                  <path class="bg-shard-c1" d="M 53.5,32.35 L 70.04,67.12 L 54.47,74.9 L 97.76,91.93 L 53.5,0 Z" />
+                  <path class="trace-path-c1 trace-path-right-c1" d="M 53.5,32.35 L 70.04,67.12 L 54.47,74.9 L 97.76,91.93 L 53.5,0 Z" />
+                </g>
+                <path class="center-diamond-c1" d="M 59.85,58.62 L 65.85,70.50 L 59.85,73.45 L 54.16,70.49 Z" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="spec-pill">SVG / CSS</span>
+            <button class="action-btn select-spinner-btn" data-target="kinetic">
+              Inspect Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Spinner Card 2 -->
+        <div class="spinner-card" id="card-orbit">
+          <div class="card-header">
+            <h2 class="card-title">Consensus Orbit</h2>
+            <p class="card-desc">AI-validators aligning consensus around the central node.</p>
+          </div>
+          <div class="spinner-display-area">
+            <div class="spinner-wrapper" id="wrapper-orbit" style="width: 80px; height: 80px;">
+              <!-- INLINED assets/spinner-consensus-orbit.svg -->
+              <svg class="gen-spinner-svg" viewBox="0 0 120 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="comet-glow-card-2" x="-20%" y="-25%" width="140%" height="150%">
+                    <feGaussianBlur stdDeviation="2.5" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="comet-grad-1-c2" x1="60" y1="34" x2="86" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#110FFF" stop-opacity="0" />
+                    <stop offset="30%" stop-color="#110FFF" stop-opacity="0.15" />
+                    <stop offset="100%" stop-color="#110FFF" stop-opacity="1" />
+                  </linearGradient>
+                  <linearGradient id="comet-grad-2-c2" x1="60" y1="22" x2="98" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#110FFF" stop-opacity="0" />
+                    <stop offset="30%" stop-color="#110FFF" stop-opacity="0.15" />
+                    <stop offset="100%" stop-color="#110FFF" stop-opacity="1" />
+                  </linearGradient>
+                  <linearGradient id="comet-grad-3-c2" x1="60" y1="10" x2="110" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#110FFF" stop-opacity="0" />
+                    <stop offset="30%" stop-color="#110FFF" stop-opacity="0.15" />
+                    <stop offset="100%" stop-color="#110FFF" stop-opacity="1" />
+                  </linearGradient>
+                  <style>
+                    .orbit-track-c2 { fill: none; stroke: #110FFF; stroke-opacity: 0.08; stroke-width: 1; }
+                    .comet-group-inner-c2 { transform-origin: 60px 60px; animation: spin-cw-c2 1.4s linear infinite; }
+                    .comet-group-middle-c2 { transform-origin: 60px 60px; animation: spin-ccw-c2 2.2s linear infinite; }
+                    .comet-group-outer-c2 { transform-origin: 60px 60px; animation: spin-cw-c2 3s linear infinite; }
+                    .center-diamond-c2 { fill: #110FFF; transform-origin: 60px 66px; animation: consensus-pulse-c2 1.8s ease-in-out infinite; filter: url(#comet-glow-card-2); }
+                    @keyframes spin-cw-c2 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                    @keyframes spin-ccw-c2 { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+                    @keyframes consensus-pulse-c2 { 0%, 100% { transform: scale(0.8); fill: #110FFF; fill-opacity: 0.6; filter: drop-shadow(0 0 1px #110FFF); } 50% { transform: scale(1.15); fill: #00FF66; fill-opacity: 1; filter: drop-shadow(0 0 8px #00FF66); } }
+                  </style>
+                </defs>
+                <circle class="orbit-track-c2" cx="60" cy="60" r="26" />
+                <circle class="orbit-track-c2" cx="60" cy="60" r="38" />
+                <circle class="orbit-track-c2" cx="60" cy="60" r="50" />
+                <g class="comet-group-inner-c2">
+                  <path d="M 60 34 A 26 26 0 0 1 86 60" fill="none" stroke="url(#comet-grad-1-c2)" stroke-width="2.5" stroke-linecap="round" />
+                  <circle cx="86" cy="60" r="3" fill="#110FFF" filter="url(#comet-glow-card-2)" />
+                </g>
+                <g class="comet-group-middle-c2">
+                  <path d="M 60 22 A 38 38 0 0 1 98 60" fill="none" stroke="url(#comet-grad-2-c2)" stroke-width="3" stroke-linecap="round" />
+                  <circle cx="98" cy="60" r="3.5" fill="#110FFF" filter="url(#comet-glow-card-2)" />
+                </g>
+                <g class="comet-group-outer-c2">
+                  <path d="M 60 10 A 50 50 0 0 1 110 60" fill="none" stroke="url(#comet-grad-3-c2)" stroke-width="3.5" stroke-linecap="round" />
+                  <circle cx="110" cy="60" r="4" fill="#110FFF" filter="url(#comet-glow-card-2)" />
+                </g>
+                <path class="center-diamond-c2" d="M 60.00,58.62 L 66.00,70.50 L 60.00,73.45 L 54.31,70.49 Z" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="spec-pill">SVG / CSS</span>
+            <button class="action-btn select-spinner-btn" data-target="orbit">
+              Inspect Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Spinner Card 3 -->
+        <div class="spinner-card" id="card-adjudication">
+          <div class="card-header">
+            <h2 class="card-title">Dynamic Adjudication</h2>
+            <p class="card-desc">Sync-sweep scanner lighting up logo elements sequentially.</p>
+          </div>
+          <div class="spinner-display-area">
+            <div class="spinner-wrapper" id="wrapper-adjudication" style="width: 80px; height: 80px;">
+              <!-- INLINED assets/spinner-dynamic-adjudication.svg -->
+              <svg class="gen-spinner-svg" viewBox="0 0 120 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="scan-glow-card-3" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="2.5" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="scan-grad-card-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop class="color-stop-primary" offset="0%" stop-color="#110FFF" stop-opacity="1"/>
+                    <stop class="color-stop-primary" offset="70%" stop-color="#110FFF" stop-opacity="0.3"/>
+                    <stop class="color-stop-primary" offset="100%" stop-color="#110FFF" stop-opacity="0"/>
+                  </linearGradient>
+                  <style>
+                    .shard-base-c3 { fill: #110FFF; stroke: #110FFF; stroke-width: 2; transition: fill-opacity 0.2s, stroke-opacity 0.2s; }
+                    .right-wing-c3 { animation: rw-scan-c3 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+                    .center-node-c3 { animation: cn-scan-c3 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+                    .left-wing-c3 { animation: lw-scan-c3 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+                    .scan-arc-c3 { transform-origin: 60px 60px; animation: spin-scan-c3 1.6s linear infinite; stroke-dasharray: 120 194; filter: url(#scan-glow-card-3); }
+                    @keyframes spin-scan-c3 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                    @keyframes rw-scan-c3 { 0%, 100%, 35% { fill-opacity: 0.1; stroke-opacity: 0.2; filter: none; } 12% { fill-opacity: 0.9; stroke-opacity: 1; filter: drop-shadow(0 0 4px #110FFF); } }
+                    @keyframes cn-scan-c3 { 0%, 100%, 25%, 68% { fill-opacity: 0.1; stroke-opacity: 0.2; filter: none; } 48% { fill-opacity: 1; stroke-opacity: 1; filter: drop-shadow(0 0 6px #110FFF); } }
+                    @keyframes lw-scan-c3 { 0%, 100%, 58% { fill-opacity: 0.1; stroke-opacity: 0.2; filter: none; } 80% { fill-opacity: 0.9; stroke-opacity: 1; filter: drop-shadow(0 0 4px #110FFF); } }
+                  </style>
+                </defs>
+                <circle class="scan-arc-c3" cx="60" cy="60" r="50" fill="none" stroke="url(#scan-grad-card-3)" stroke-width="3" stroke-linecap="round" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#110FFF" stroke-opacity="0.05" stroke-width="3" />
+                <g transform="translate(60, 60) scale(0.58) translate(-48.88, -45.965)">
+                  <path class="shard-base-c3 left-wing-c3" d="M 44.26,32.35 L 27.72,67.12 L 43.29,74.9 L 0,91.93 L 44.26,0 Z" />
+                  <path class="shard-base-c3 right-wing-c3" d="M 53.5,32.35 L 70.04,67.12 L 54.47,74.9 L 97.76,91.93 L 53.5,0 Z" />
+                </g>
+                <path class="shard-base-c3 center-node-c3" d="M 60.00,59.20 L 65.50,70.20 L 60.00,72.90 L 54.70,70.19 Z" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="spec-pill">SVG / CSS</span>
+            <button class="action-btn select-spinner-btn" data-target="adjudication">
+              Inspect Code
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Control Panel -->
+      <aside class="control-panel">
+        <h2 class="section-title">Configure Showcase</h2>
+
+        <!-- Size Customizer -->
+        <div class="control-group">
+          <label class="control-label" for="size-slider">
+            Spinner Size: <span class="slider-val" id="size-val">80px</span>
+          </label>
+          <input type="range" id="size-slider" class="range-slider" min="16" max="128" value="80" step="4">
+          <div class="preset-grid">
+            <button class="preset-btn" data-size="16">16px</button>
+            <button class="preset-btn" data-size="32">32px</button>
+            <button class="preset-btn" data-size="48">48px</button>
+            <button class="preset-btn" data-size="64">64px</button>
+            <button class="preset-btn active" data-size="80">80px</button>
+            <button class="preset-btn" data-size="128">128px</button>
+          </div>
+        </div>
+
+        <!-- Speed Customizer -->
+        <div class="control-group">
+          <label class="control-label" for="speed-slider">
+            Animation Duration multiplier: <span class="slider-val" id="speed-val">1.0x</span>
+          </label>
+          <input type="range" id="speed-slider" class="range-slider" min="0.2" max="2.5" value="1.0" step="0.1">
+          <div class="preset-grid">
+            <button class="preset-btn" data-speed="0.5">Slow (0.5x)</button>
+            <button class="preset-btn active" data-speed="1.0">Normal (1x)</button>
+            <button class="preset-btn" data-speed="2.0">Fast (2x)</button>
+          </div>
+        </div>
+
+        <!-- Colorway Selector -->
+        <div class="control-group">
+          <label class="control-label">Identity Colorway</label>
+          <div class="color-picker">
+            <button class="color-dot active" style="color: #110FFF; background-color: #110FFF;" data-color="#110FFF" title="Kinetic Cobalt"></button>
+            <button class="color-dot" style="color: #FFFFFF; background-color: #FFFFFF;" data-color="#FFFFFF" title="Photon White"></button>
+            <button class="color-dot" style="color: #00FF66; background-color: #00FF66;" data-color="#00FF66" title="Success Green"></button>
+            <button class="color-dot" style="color: #303030; background-color: #303030;" data-color="#303030" title="Graphite Grey"></button>
+          </div>
+        </div>
+
+        <div style="border-t: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+          <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">
+            Customizations dynamically update the inline SVGs and recalculate the source code exporter below in real-time.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Code & Export Panel -->
+      <section class="code-section" id="code-export-panel">
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="kinetic">Kinetic Shards</button>
+          <button class="tab-btn" data-tab="orbit">Consensus Orbit</button>
+          <button class="tab-btn" data-tab="adjudication">Dynamic Adjudication</button>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span class="code-lang-label" id="current-tab-label">spinner-kinetic-shards.svg</span>
+            <div class="copy-btn-group">
+              <button class="btn-secondary" id="btn-copy-code">
+                <!-- Copy Icon -->
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy SVG Code
+              </button>
+              <button class="btn-primary" id="btn-download-file">
+                <!-- Download Icon -->
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download SVG
+              </button>
+            </div>
+          </div>
+          <pre><code id="code-preview">Loading code snippet...</code></pre>
+        </div>
+      </section>
+
+      <!-- Integration & Design Metrics Guidelines -->
+      <section class="doc-section">
+        
+        <div class="doc-card">
+          <h3 class="doc-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cobalt)" stroke-width="2">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Integration Recipes
+          </h3>
+          <p>The exported files contain self-contained, inline CSS rules and filters, making them fully standalone assets. Choose the method that fits your stack:</p>
+          <ul class="doc-list">
+            <li><strong>HTML Image Element:</strong> Simply save the SVG to your public asset path and load it via <code>&lt;img src="assets/spinner.svg" /&gt;</code>.</li>
+            <li><strong>React / Vue Components:</strong> Copy the code inside the SVG tag, replace XML casing with JSX casing, and render directly for complete inline CSS control.</li>
+            <li><strong>CSS Backgrounds:</strong> Stringify the SVG XML and encode it as a DataURI for background image variables.</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <h3 class="doc-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cobalt)" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Brand Metrics & Alignment
+          </h3>
+          <p>These loaders reflect GenLayer's identity as the adjudication layer for the agentic economy:</p>
+          <ul class="doc-list">
+            <li><strong>Kinetic Cobalt Core:</strong> Defaulting to <code>#110FFF</code> represents high-speed execution and authority.</li>
+            <li><strong>Trace and Scan:</strong> Simulates line-by-line validation, oracle verification, and smart contract execution.</li>
+            <li><strong>Consensus Heartbeat:</strong> A momentary success-green flash on orbital nodes represents consensus resolved.</li>
+          </ul>
+        </div>
+
+        <div class="doc-card">
+          <h3 class="doc-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-cobalt)" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            Performance Profiles
+          </h3>
+          <p>Engineered for lightweight, zero-latency loading states:</p>
+          <ul class="doc-list">
+            <li><strong>No Heavy Frameworks:</strong> Powered exclusively by vector math and GPU-accelerated CSS keyframe transforms.</li>
+            <li><strong>Micro Size:</strong> Less than 2KB per file, preventing bundle bloat and ensuring quick rendering.</li>
+            <li><strong>Responsive:</strong> Built with high-precision viewbox scaling, remaining crisp at 16px text-level alignments.</li>
+          </ul>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      ©2026 GENLAYER PROTOCOL · DESIGNED FOR THE AGENTIC ECONOMY
+    </footer>
+
+    <!-- Toast Notification Popup -->
+    <div class="toast" id="toast-message">Code copied to clipboard!</div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

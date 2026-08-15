@@ -1,0 +1,117 @@
+<svg id="genlayer-spinner-kinetic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <!-- Glow Filter for Neon Effect -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Linear Gradient for Rotating Ring -->
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--gen-cobalt, #110FFF)" stop-opacity="1"/>
+      <stop offset="60%" stop-color="var(--gen-cobalt, #110FFF)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--gen-cobalt, #110FFF)" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      :root {
+        --gen-cobalt: #110FFF;
+        --gen-dark: #070707;
+        --gen-light: #F5F5F5;
+      }
+
+      /* Base styles */
+      .bg-shard {
+        fill: var(--gen-cobalt, #110FFF);
+        fill-opacity: 0.08;
+        stroke: var(--gen-cobalt, #110FFF);
+        stroke-width: 1.5;
+        stroke-opacity: 0.2;
+      }
+
+      /* Animated Tracing Paths */
+      .trace-path {
+        fill: none;
+        stroke: var(--gen-cobalt, #110FFF);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 80 160;
+        animation: trace-flow 2.5s cubic-bezier(0.4, 0.2, 0.2, 1) infinite;
+        filter: url(#neon-glow);
+      }
+
+      .trace-path-right {
+        animation-delay: -1.25s; /* Off-sync tracing for organic feel */
+      }
+
+      /* Pulsing Central Diamond */
+      .center-diamond {
+        fill: var(--gen-cobalt, #110FFF);
+        transform-origin: 60px 68.5px;
+        animation: diamond-pulse 2s ease-in-out infinite;
+        filter: url(#neon-glow);
+      }
+
+      /* Rotating Ring */
+      .outer-ring {
+        transform-origin: 60px 60px;
+        animation: spin-clockwise 1.8s linear infinite;
+        stroke-dasharray: 240 74; /* Leaves a sleek gap */
+      }
+
+      /* Animation Definitions */
+      @keyframes spin-clockwise {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes trace-flow {
+        0% {
+          stroke-dashoffset: 240;
+        }
+        50% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: -240;
+        }
+      }
+
+      @keyframes diamond-pulse {
+        0%, 100% {
+          transform: scale(0.85);
+          fill-opacity: 0.6;
+          filter: drop-shadow(0 0 1px var(--gen-cobalt, #110FFF));
+        }
+        50% {
+          transform: scale(1.15);
+          fill-opacity: 1;
+          filter: drop-shadow(0 0 6px var(--gen-cobalt, #110FFF));
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Outer Spinning Track -->
+  <circle class="outer-ring" cx="60" cy="60" r="50" fill="none" stroke="url(#ring-grad)" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Center GenLayer Emblem Group (Scaled & Center Adjusted) -->
+  <g transform="translate(60, 60) scale(0.62) translate(-48.88, -45.965)">
+    <!-- Left Shard Background & Trace -->
+    <path class="bg-shard" d="M 44.26,32.35 L 27.72,67.12 L 43.29,74.9 L 0,91.93 L 44.26,0 Z" />
+    <path class="trace-path" d="M 44.26,32.35 L 27.72,67.12 L 43.29,74.9 L 0,91.93 L 44.26,0 Z" />
+
+    <!-- Right Shard Background & Trace -->
+    <path class="bg-shard" d="M 53.5,32.35 L 70.04,67.12 L 54.47,74.9 L 97.76,91.93 L 53.5,0 Z" />
+    <path class="trace-path trace-path-right" d="M 53.5,32.35 L 70.04,67.12 L 54.47,74.9 L 97.76,91.93 L 53.5,0 Z" />
+  </g>
+
+  <!-- Central Diamond (Separated for perfect transform-origin referencing in container viewbox space) -->
+  <!-- Target Center is 60,60. Original diamond center was 48.77, 59.33. -->
+  <!-- Scaled center in 120x120 box is: 0.62 * (48.77 - 48.88) + 60 = 59.93, 0.62 * (59.33 - 45.965) + 60 = 68.28 -->
+  <path class="center-diamond" d="M 59.85,58.62 L 65.85,70.50 L 59.85,73.45 L 54.16,70.49 Z" />
+</svg>

@@ -1,0 +1,119 @@
+<svg id="genlayer-spinner-adjudication" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <!-- Glow Filter -->
+    <filter id="scan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Scan Line Gradient -->
+    <linearGradient id="scan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--gen-cobalt, #110FFF)" stop-opacity="1"/>
+      <stop offset="70%" stop-color="var(--gen-cobalt, #110FFF)" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="var(--gen-cobalt, #110FFF)" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      :root {
+        --gen-cobalt: #110FFF;
+      }
+
+      /* Logo Shard Base Styles */
+      .shard-base {
+        fill: var(--gen-cobalt, #110FFF);
+        stroke: var(--gen-cobalt, #110FFF);
+        stroke-width: 2;
+        transition: fill-opacity 0.2s, stroke-opacity 0.2s;
+      }
+
+      /* Chrono-synchronized Scanning Keyframes */
+      .right-wing {
+        animation: right-wing-scan 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      .center-node {
+        animation: center-node-scan 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      .left-wing {
+        animation: left-wing-scan 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      .scan-arc {
+        transform-origin: 60px 60px;
+        animation: spin-scan 1.6s linear infinite;
+        stroke-dasharray: 120 194; /* 120px sweep length */
+        filter: url(#scan-glow);
+      }
+
+      /* Keyframe Definitions */
+      @keyframes spin-scan {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* Right Wing reacts when scanner is at ~0° to ~120° (0% to 33% of rotation) */
+      @keyframes right-wing-scan {
+        0%, 100%, 35% {
+          fill-opacity: 0.1;
+          stroke-opacity: 0.2;
+          filter: none;
+        }
+        12% {
+          fill-opacity: 0.9;
+          stroke-opacity: 1;
+          filter: drop-shadow(0 0 4px var(--gen-cobalt, #110FFF));
+        }
+      }
+
+      /* Center Node reacts when scanner is at ~120° to ~240° (33% to 66% of rotation) */
+      @keyframes center-node-scan {
+        0%, 100%, 25%, 68% {
+          fill-opacity: 0.1;
+          stroke-opacity: 0.2;
+          filter: none;
+        }
+        48% {
+          fill-opacity: 1;
+          stroke-opacity: 1;
+          filter: drop-shadow(0 0 6px var(--gen-cobalt, #110FFF));
+        }
+      }
+
+      /* Left Wing reacts when scanner is at ~240° to ~360° (66% to 100% of rotation) */
+      @keyframes left-wing-scan {
+        0%, 100%, 58% {
+          fill-opacity: 0.1;
+          stroke-opacity: 0.2;
+          filter: none;
+        }
+        80% {
+          fill-opacity: 0.9;
+          stroke-opacity: 1;
+          filter: drop-shadow(0 0 4px var(--gen-cobalt, #110FFF));
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Outer Scanning Laser Ring -->
+  <circle class="scan-arc" cx="60" cy="60" r="50" fill="none" stroke="url(#scan-grad)" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Background Track Ring for Depth -->
+  <circle cx="60" cy="60" r="50" fill="none" stroke="var(--gen-cobalt, #110FFF)" stroke-opacity="0.05" stroke-width="3" />
+
+  <!-- Logo Group -->
+  <g transform="translate(60, 60) scale(0.58) translate(-48.88, -45.965)">
+    <!-- Left Wing -->
+    <path class="shard-base left-wing" d="M 44.26,32.35 L 27.72,67.12 L 43.29,74.9 L 0,91.93 L 44.26,0 Z" />
+
+    <!-- Right Wing -->
+    <path class="shard-base right-wing" d="M 53.5,32.35 L 70.04,67.12 L 54.47,74.9 L 97.76,91.93 L 53.5,0 Z" />
+  </g>
+
+  <!-- Center Diamond Node (separated for layered transform logic if needed, aligned to grid) -->
+  <path class="shard-base center-node" d="M 60.00,59.20 L 65.50,70.20 L 60.00,72.90 L 54.70,70.19 Z" />
+</svg>
